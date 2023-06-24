@@ -1,0 +1,10 @@
+@page "/"
+@inherits BasePage
+<PageTitle>Index</PageTitle>
+
+<div style="display: flex; justify-content: center; align-items: center; min-height: 75vh; flex-direction: column;">
+    <RadzenImage Path="_content/HPIndigoSysValTool.UI.Shared/images/Machines/6K.png" Style="display: block;"></RadzenImage>
+    <RadzenText TextStyle="TextStyle.DisplayH3" Style="color: rgb(0, 150, 214); font-family: Arial; text-align: center;">@($"HP Indigo {PressModel} Digital Press")</RadzenText>
+</div>
+
+<CascadingParameter Name="MainLayout" Value="mainLayout" />

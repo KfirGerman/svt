@@ -1,0 +1,95 @@
+﻿@inherits LayoutComponentBase
+
+
+<RadzenDialog/>
+<RadzenNotification/>
+<RadzenTooltip/>
+<RadzenContextMenu/>
+
+<CascadingValue Value="this" Name="MainLayout">
+
+
+<RadzenLayout style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body';">
+
+    <ChildContent>
+        <RadzenBody>
+            <!--Create a Title for the page-->
+            <div class="container-fluid" style="height: 100%;">
+                <div class="row pt-3 px-1" style="height: 10%;">
+                    <div class="col">
+                        <RadzenCard Style="margin-top: 0px; height: 100%;">
+                            <div class="row">
+                                <div class="col">
+                                    <RadzenText Text="@PageTitleService.PageTitle" TextStyle="Radzen.Blazor.TextStyle.DisplayH5" TagName="Radzen.Blazor.TagName.H5"></RadzenText>
+                                </div>
+                            </div>
+                        </RadzenCard>
+                    </div>
+                </div>
+                <div class="row pt-3 px-1" style="height: 90%;">
+                    <div class="col">
+                        <RadzenCard Style="margin-top: 0px; height: 100%;">
+                            <div class="row">
+                                <div class="col">
+                                    @Body
+                                </div>
+                            </div>
+                        </RadzenCard>
+                    </div>
+                </div>
+            </div>
+        </RadzenBody>
+
+
+        <RadzenSidebar Style="width: 400px;">
+
+            <div class="py-3 py-lg-4" style="align-items: center; display: flex; flex-direction: column; gap: 1rem; width: 400px">
+                <RadzenImage Style="height: 90px; width: 90px;" Path="_content/HPIndigoSysValTool.UI.Shared/images/HP-Logo.png"></RadzenImage>
+                <RadzenText Text="HP Indigo System Validation Tool" Style="color: rgb(0, 150, 214); font-family: Arial; font-weight: 600;"/>
+
+            </div>
+            
+            <RadzenPanelMenu Style="color: rgb(0, 150, 214); font-family: Arial; font-weight: 600; height: 600px; width: 400px;" Multiple="@_multiple">
+                <RadzenPanelMenuItem Text="Main" Path="/" Icon="home" ></RadzenPanelMenuItem>
+
+                <RadzenPanelMenuItem Text="System Information" Icon="wysiwyg">
+                    <RadzenPanelMenuItem Text="System" Path="system-information/system%20information" Icon="computer"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Memory" Path="system-information/memory" Icon="memory"></RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Text="Processor" Path="system-information/processor" Icon="developer_board"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Storage" Path="system-information/storage" Icon="storage"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Network" Path="system-information/network" Icon="lan"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Video" Path="system-information/video" Icon="hd"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="USB" Path="system-information/usb" Icon="settings_input_hdmi"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Vcron/Gcron" Path="system-information/vcron%2Fgcron" Icon="developer_board"></RadzenPanelMenuItem>
+                </RadzenPanelMenuItem>
+
+                <RadzenPanelMenuItem Text="Validation" Icon="fact_check">
+                    <RadzenPanelMenuItem Text="Component Validation" Path="component-validation" Icon="check"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="System Validation" Path="system-validation" Icon="playlist_add_check"></RadzenPanelMenuItem>
+                </RadzenPanelMenuItem>
+
+                <RadzenPanelMenuItem Text="Logs" Icon="content_paste">
+                    <RadzenPanelMenuItem Text="Validation Logs" Path="system-information" Icon="grid_on"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="System Logs" Path="system-information" Icon="list"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Generate PDF" Path="system-information" Icon="save"></RadzenPanelMenuItem>
+                </RadzenPanelMenuItem>
+
+                <RadzenPanelMenuItem Text="Settings" Icon="settings">
+                    <RadzenPanelMenuItem Text="Main Settings" Path="system-information" Icon="settings"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Profile Settings" Path="settings" Icon="settings"></RadzenPanelMenuItem>
+                </RadzenPanelMenuItem>
+
+            </RadzenPanelMenu>
+
+        </RadzenSidebar>
+    </ChildContent>
+
+</RadzenLayout>
+
+</CascadingValue>
+
+@code {
+    readonly bool _multiple = false;
+
+
+}

@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net6.0-windows</TargetFramework>
+	<Nullable>enable</Nullable>
+	<UseWPF>true</UseWPF>
+	<RootNamespace>HPIndigoSysValTool</RootNamespace>
+	<AssemblyName>HPIndigoSysValTool.UI.WPF</AssemblyName>
+	<Configurations>Debug;Release;DebugRemote</Configurations>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+	<StartupObject>HPIndigoSysValTool.UI.WPF.App</StartupObject>
+	<IsPublishable>True</IsPublishable>
+	<ApplicationIcon>wwwroot\HPTitleIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRemote|AnyCPU'">
+		<OutputPath>\\eng-storage.inr.rd.hpicorp.net\engineering\Kfir\SVT\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.552" />
+	  <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1619-prerelease" />
+	  <PackageReference Include="Radzen.Blazor" Version="4.6.8" />  
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<Content Update="wwwroot\**">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\HPIndigoSysValTool.Validation\Profiles\**">
+			<Link>Profiles\%(RecursiveDir)%(FileName)%(Extension)</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\HPIndigoSysValTool.Handlers\HPIndigoSysValTool.Handlers.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.SystemInfo\HPIndigoSysValTool.SystemInfo.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.UI.Shared\HPIndigoSysValTool.UI.Shared.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.Validation\HPIndigoSysValTool.Validation.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\index.html">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+
+</Project>

@@ -1,0 +1,74 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<IsShippingPackage>false</IsShippingPackage>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<PublishSingleFile Condition="'$(Configuration)' == 'Release'">true</PublishSingleFile>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<PlatformTarget>x64</PlatformTarget>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<StartupObject>HPIndigoSysValTool.UI.WPF.App</StartupObject>
+		<IsPublishable>True</IsPublishable>
+		<ApplicationIcon>wwwroot\HPTitleIcon.ico</ApplicationIcon>
+		<Configurations>Debug;Release;DebugRemote</Configurations>
+		<BaseOutputPath></BaseOutputPath>
+
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.552" PrivateAssets="all" />
+	  <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1619-prerelease" />
+	  <PackageReference Include="Radzen.Blazor" Version="4.6.8" />  
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<Content Update="wwwroot\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\HPIndigoSysValTool.Shared\wwwroot\**">
+			<Link>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="wwwroot/**" Pack="true" PackagePath="_content/HPIndigoSysValTool.UI.Shared" />
+	</ItemGroup>
+
+	<Target Name="CreateContentFolder" AfterTargets="AfterBuild">
+		<MakeDir Directories="$(TargetDir)wwwroot\_content\HPIndigoSysValTool.UI.Shared" />
+	</Target>
+	<Target Name="CopyStaticAssets" AfterTargets="AfterBuild">
+		<Copy SourceFiles="@(Content)" DestinationFolder="$(OutputPath)\_content\HPIndigoSysValTool.UI.Shared" SkipUnchangedFiles="true" />
+	</Target>
+
+	<ItemGroup>
+		<Content Include="..\HPIndigoSysValTool.Validation\Profiles\**">
+			<Link>Profiles\%(RecursiveDir)%(FileName)%(Extension)</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\HPIndigoSysValTool.Handlers\HPIndigoSysValTool.Handlers.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.SystemInfo\HPIndigoSysValTool.SystemInfo.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.UI.Shared\HPIndigoSysValTool.UI.Shared.csproj" />
+	  <ProjectReference Include="..\HPIndigoSysValTool.Validation\HPIndigoSysValTool.Validation.csproj" />
+	</ItemGroup>
+</Project>

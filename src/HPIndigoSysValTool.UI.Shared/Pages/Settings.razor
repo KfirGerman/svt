@@ -1,0 +1,23 @@
+﻿@page "/settings"
+@using HPIndigoSysValTool.SystemInfo.Components
+@inherits HPIndigoSysValTool.UI.Pages.Settings
+
+<RadzenRow>
+
+    <RadzenColumn Size="6">
+    <ChildContent>
+        <h4>Select The Press Model</h4>
+        <RadzenTemplateForm Data="@this">
+            <RadzenFieldset>
+                <RadzenLabel Text="Press Series" />
+                <RadzenDropDown TValue="string" Value=@selectedSeries Data=@series Change="@(args => OnSeriesChanged((string)args))" Style="width: 100%; max-width: 400px;"/>
+                <RadzenLabel Text="Press Model" />
+                <RadzenDropDown TValue="string" Value=@selectedPress Data=@press Style="width: 100%; max-width: 400px;"/>
+            </RadzenFieldset>
+
+            <RadzenButton Text="Save" ButtonStyle="ButtonStyle.Primary" Click="@SaveSettings" />
+        </RadzenTemplateForm>
+    </ChildContent>
+</RadzenColumn>
+
+</RadzenRow>

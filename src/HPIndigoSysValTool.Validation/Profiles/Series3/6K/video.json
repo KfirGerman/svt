@@ -1,0 +1,20 @@
+{
+  "Profile Details": [
+    {
+      "AdapterCompatibility": "NVIDIA",
+      "Caption": "NVIDIA T1200 Laptop GPU",
+      "DeviceName": "NVIDIA T1200 Laptop GPU",
+      "DeviceID": "VideoController2",
+      "SlotDesignation": "N/A",
+      "BusNumber": 1,
+      "DeviceNumber": null,
+      "FunctionNumber": null,
+      "PNPDeviceID": "PCI\\VEN_10DE&DEV_1FBC&SUBSYS_8870103C&REV_A1\\4&2B26A038&0&0008",
+      "DriverDate": "10/19/2022 3:00:00 AM",
+      "DriverVersion": "31.0.15.1766",
+      "InstallDate": "",
+      "AdapterRAM": "4.00 GB"
+    }
+  ]
+
+}

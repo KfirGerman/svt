@@ -1,0 +1,26 @@
+{
+  "Profile Details": [
+    {
+      "BankLabel": "Controller0ChannelADimm0",
+      "DeviceLocator": "Top-Slot 1(left)",
+      "Manufacturer": "Hynix/Hyundai",
+      "PartNumber": "HMAA2GS6AJR8N-XN    ",
+      "SerialNumber": "25C36FAF",
+      "Capacity": "16.00 GB",
+      "Speed": "3200 MHz",
+      "SMBIOSMemoryType": "DDR4",
+      "TypeDetail": null
+    },
+    {
+      "BankLabel": "Controller1ChannelADimm0",
+      "DeviceLocator": "Top-Slot 2(right)",
+      "Manufacturer": "Hynix/Hyundai",
+      "PartNumber": "HMAA2GS6AJR8N-XN    ",
+      "SerialNumber": "25C36F2C",
+      "Capacity": "16.00 GB",
+      "Speed": "3200 MHz",
+      "SMBIOSMemoryType": "DDR4",
+      "TypeDetail": null
+    }
+  ]
+}

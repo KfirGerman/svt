@@ -1,0 +1,28 @@
+﻿@inherits BaseTable<T>
+@typeparam T
+@using System.Reflection
+@using System.ComponentModel
+@using System.Collections
+<RadzenDataList Data="@TableData" TItem="T" PagerHorizontalAlign="HorizontalAlign.Left">
+    <Template Context="dataItem">
+        <RadzenRow Gap="0">
+            <RadzenColumn Size="12">
+                @foreach (var prop in dataItem.GetType().GetProperties())
+                {
+                    <RadzenRow Style="border-bottom: 1px solid #d9d9d9; padding-bottom: 5px; margin-bottom: 5px;">
+                        <RadzenColumn Size="6">
+                            <RadzenText>
+                                @(prop.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName ?? prop.Name)
+                            </RadzenText>
+                        </RadzenColumn>
+                        <RadzenColumn Size="6" class="rz-text-align-right">
+                            <RadzenText>
+                                @prop.GetValue(dataItem)?.ToString()
+                            </RadzenText>
+                        </RadzenColumn>
+                    </RadzenRow>
+                }
+            </RadzenColumn>
+        </RadzenRow>
+    </Template>
+</RadzenDataList>

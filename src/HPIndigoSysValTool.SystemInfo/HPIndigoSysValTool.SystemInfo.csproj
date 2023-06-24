@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net6.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<RootNamespace>HPIndigoSysValTool</RootNamespace>
+		<AssemblyName>HPIndigoSysValTool.SystemInfo</AssemblyName>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\artifacts\bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Components\Memory\" />
+		<Folder Include="Components\USB\" />
+		<Folder Include="Components\Video\" />
+		<Folder Include="Components\PCIe\" />
+		<Folder Include="Components\Processor\" />
+		<Folder Include="Components\Storage\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ByteSize" Version="2.1.1" />
+		<PackageReference Include="Serilog" Version="2.12.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.Trace" Version="3.0.0" />
+		<PackageReference Include="System.Management" Version="7.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\HPIndigoSysValTool.Handlers\HPIndigoSysValTool.Handlers.csproj" />
+	</ItemGroup>
+
+</Project>

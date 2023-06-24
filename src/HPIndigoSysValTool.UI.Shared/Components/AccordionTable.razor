@@ -1,0 +1,52 @@
+﻿@inherits BaseTable<T>
+@typeparam T
+@using System.Reflection
+@using System.ComponentModel
+@using System.Collections
+
+<RadzenAccordion>
+    <Items>
+        @foreach (var (item, index) in TableData.Select((obj, i) => (obj, i)))
+        {
+            <RadzenAccordionItem Text="@($"{typeof(T).Name} {index + 1}")" Expanded="@IsAccordionExpanded(index)" Toggle="false" Click="@(() => SetAccordionExpanded(index))">
+                <RadzenDataList Data="@WrapInList(item)" TItem="T" PagerHorizontalAlign="HorizontalAlign.Left">
+                    <Template Context="dataItem">
+                        <RadzenRow Gap="0">
+                            <RadzenColumn Size="12">
+                                @foreach (var prop in dataItem.GetType().GetProperties())
+                                {
+                                    if (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(List<>))
+                                    {
+                                        // Iterate over the list and display each item
+
+
+
+
+
+
+
+                                    }
+                                    else
+                                    {
+                                        <RadzenRow Style="border-bottom: 1px solid #d9d9d9; padding-bottom: 5px; margin-bottom: 5px;">
+                                            <RadzenColumn Size="6">
+                                                <RadzenText>
+                                                    @(prop.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName ?? prop.Name)
+                                                </RadzenText>
+                                            </RadzenColumn>
+                                            <RadzenColumn Size="6" class="rz-text-align-right">
+                                                <RadzenText>
+                                                    @prop.GetValue(dataItem)?.ToString()
+                                                </RadzenText>
+                                            </RadzenColumn>
+                                        </RadzenRow>
+                                    }
+                                }
+                            </RadzenColumn>
+                        </RadzenRow>
+                    </Template>
+                </RadzenDataList>
+            </RadzenAccordionItem>
+        }
+    </Items>
+</RadzenAccordion>

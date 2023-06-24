@@ -1,0 +1,21 @@
+{
+  "Profile Details": [
+    {
+      "BankLabel": "Controller0ChannelADimm0",
+      "DeviceLocator": "Top-Slot 1(left)",
+      "Manufacturer": "Hynix/Hyundai",
+      "PartNumber": "HMAA2GS6AJR8N-XN",
+      "SerialNumber": "25C36C47",
+      "Capacity": "16.00 GB"
+    },
+    {
+      "BankLabel": "Controller1ChannelADimm0",
+      "DeviceLocator": "Top-Slot 2(right)",
+      "Manufacturer": "Hynix/Hyundai",
+      "PartNumber": "HMAA2GS6AJR8N-XN",
+      "SerialNumber": "25C36C56",
+      "Capacity": "16.00 GB"
+    }
+  ]
+
+}

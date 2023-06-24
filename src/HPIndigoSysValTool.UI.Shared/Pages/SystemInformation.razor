@@ -1,0 +1,47 @@
+@page "/system-information/{HardwareName}"
+@using HPIndigoSysValTool.SystemInfo.Components
+@inherits HPIndigoSysValTool.UI.Pages.SystemInformation
+
+@if (!string.IsNullOrEmpty(@HardwareName))
+{
+    string hardwareNameLower = HardwareName.ToLower();
+
+    <h3 class="text-center my-5">@HardwareName</h3>
+    @if (hardwareNameLower == "system information")
+    {
+        <BaseTable T="ISystemInformation" TableName="System Information"></BaseTable>
+    }
+    else if (hardwareNameLower == "memory")
+    {
+        <BaseTable T="IMemory" TableName="Memory"></BaseTable>
+    }
+    else if (hardwareNameLower == "processor")
+    {
+        <BaseTable T="IProcessor" TableName="Processor"></BaseTable>
+    }
+    else if (hardwareNameLower == "storage")
+    {
+        <BaseTable T="IStorage" TableName="Storage"></BaseTable>
+    }
+    else if (hardwareNameLower == "network")
+    {
+        <BaseTable T="INetworkCard" TableName="Network Card"></BaseTable>
+    }
+    else if (hardwareNameLower == "video")
+    {
+        <BaseTable T="IVideo" TableName="Video"></BaseTable>
+    }
+    @*    else if (hardwareNameLower == "USB")
+    {
+        <BaseTable T="IUSB" TableName="USB"></BaseTable>
+    }
+    else if (hardwareNameLower == "Vcron/Gcron")
+    {
+        <BaseTable T="IVcronGcron" TableName="Vcron/Gcron"></BaseTable>
+    }*@
+}
+else
+{
+    <h3 class="text-center my-5">Please provide a valid hardware name in the URL.</h3>
+}
+    

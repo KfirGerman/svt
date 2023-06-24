@@ -1,0 +1,129 @@
+{
+  "Profile Details": [
+    {
+      "Model": "MTFDHBA1T0TDV-1AZ1AABHA",
+      "Manufacturer": "",
+      "Location": "PCI Slot 16 : Bus 86 : Device 0 : Function 0 : Adapter 1",
+      "SerialNumber": "0000_0000_0000_0001_00A0_7522_3412_14F9.",
+      "DiskSize": "953.87 GB",
+      "AllocatedSize": "953.87 GB",
+      "DiskFreeSize": null,
+      "BusType": 17,
+      "Number": 1,
+      "NumberOfPartitions": 4,
+      "IsOffline": false,
+      "IsReadOnly": false,
+      "IsSystem": true,
+      "IsBoot": true,
+      "IsNvme": false,
+      "IsRaid": false,
+      "Partitions": [
+        {
+          "DiskNumber": 1,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": false,
+          "IsHidden": true,
+          "IsSystem": true,
+          "PartitionNumber": 1,
+          "VolumeLetter": "N/A",
+          "FileSystem": "N/A",
+          "VolumeLabel": "N/A",
+          "Size": "N/A",
+          "SizeRemaining": "N/A"
+        },
+        {
+          "DiskNumber": 1,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": false,
+          "IsHidden": true,
+          "IsSystem": false,
+          "PartitionNumber": 2,
+          "VolumeLetter": "N/A",
+          "FileSystem": "N/A",
+          "VolumeLabel": "N/A",
+          "Size": "N/A",
+          "SizeRemaining": "N/A"
+        },
+        {
+          "DiskNumber": 1,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": true,
+          "IsHidden": false,
+          "IsSystem": false,
+          "PartitionNumber": 3,
+          "VolumeLetter": "",
+          "FileSystem": "NTFS",
+          "VolumeLabel": "Windows",
+          "Size": "952.58 GB",
+          "SizeRemaining": "793.41 GB"
+        },
+        {
+          "DiskNumber": 1,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": false,
+          "IsHidden": true,
+          "IsSystem": false,
+          "PartitionNumber": 4,
+          "VolumeLetter": "",
+          "FileSystem": "NTFS",
+          "VolumeLabel": "Windows RE",
+          "Size": "692.00 MB",
+          "SizeRemaining": "103.68 MB"
+        }
+      ]
+    },
+    {
+      "Model": "SKhynix SC300 HFS512G32MND-3210A",
+      "Manufacturer": "",
+      "Location": "Integrated : Bus 0 : Device 23 : Function 0 : Adapter 0 : Port 2",
+      "SerialNumber": "ES7BN43781020B63I",
+      "DiskSize": "476.94 GB",
+      "AllocatedSize": "476.94 GB",
+      "DiskFreeSize": null,
+      "BusType": 11,
+      "Number": 0,
+      "NumberOfPartitions": 2,
+      "IsOffline": false,
+      "IsReadOnly": false,
+      "IsSystem": false,
+      "IsBoot": false,
+      "IsNvme": false,
+      "IsRaid": false,
+      "Partitions": [
+        {
+          "DiskNumber": 0,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": false,
+          "IsHidden": true,
+          "IsSystem": false,
+          "PartitionNumber": 1,
+          "VolumeLetter": "N/A",
+          "FileSystem": "N/A",
+          "VolumeLabel": "N/A",
+          "Size": "N/A",
+          "SizeRemaining": "N/A"
+        },
+        {
+          "DiskNumber": 0,
+          "DriveLetter": "",
+          "IsActive": false,
+          "IsBoot": false,
+          "IsHidden": false,
+          "IsSystem": false,
+          "PartitionNumber": 2,
+          "VolumeLetter": "",
+          "FileSystem": "NTFS",
+          "VolumeLabel": "Dev",
+          "Size": "476.92 GB",
+          "SizeRemaining": "453.99 GB"
+        }
+      ]
+    }
+  ]
+
+}

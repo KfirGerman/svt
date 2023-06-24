@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HPIndigoSysValTool.SystemInfo": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

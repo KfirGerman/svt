@@ -1,0 +1,77 @@
+@page "/component-validation"
+@using HPIndigoSysValTool.SystemInfo.Components
+@inherits HPIndigoSysValTool.UI.Pages.ComponentValidation
+
+<PageTitle>Component Validation</PageTitle>
+<h3>Component Validation</h3>
+
+@*<RadzenAccordion>
+    <Items>
+        @foreach (var option in availableTests)
+        {
+            <RadzenAccordionItem Text="@option.Key" Icon="account_balance_wallet">
+                @foreach (var test in option.Value)
+                {
+                    <RadzenRow>
+                        <RadzenColumn Size="9">
+                            <RadzenText Style=" vertical-align: center;">@test</RadzenText>
+                        </RadzenColumn>
+
+
+                        <RadzenColumn Size="2">
+                                                        <RadzenButton Style="width: 80px; height: 20px; font-size: 11px; display: block; vertical-align: center;" Text="Run" Click="@(() => RunSelectedTest(test, option.Key))" />
+                            <RadzenButton Style="width: 80px; height: 20px; font-size: 11px; display: block; vertical-align: center;" Text="Run" Click=@OpenTestDialog />
+                        </RadzenColumn>
+
+                        <RadzenColumn Size="1">
+                            <a @ref="linkRef" style="font-size: 12px; text-align: center; cursor: pointer; text-decoration: underline; color: rgb(0, 150, 214); display: block; vertical-align: center;"
+                               @onmouseover="@(args => { ShowTestDescription(test, option.Key); ShowTooltip(linkRef, $"{description}"); })"
+                               @onmouseout="@(args => HideTooltip())">
+                                See Description
+                            </a>
+                        </RadzenColumn>
+                    </RadzenRow>
+                }
+            </RadzenAccordionItem>
+        }
+    </Items>
+</RadzenAccordion>
+*@
+
+<RadzenAccordion>
+    <Items>
+        @foreach (var option in availableTests)
+        {
+            <RadzenAccordionItem Text="@option.Key">
+                @foreach (var test in option.Value)
+                {
+                    Action runTestAction = () => OpenTestDialog(test, option.Key);
+
+                    <RadzenRow>
+                        <RadzenColumn Size="9">
+                            <RadzenText Style="vertical-align: center;">@test</RadzenText>
+                        </RadzenColumn>
+                        <RadzenColumn Size="2">
+
+                            
+                            <RadzenButton Style="width: 80px; height: 20px; font-size: 11px; display: block; vertical-align: center;" Text="Run" Click="@runTestAction" />
+
+
+                            </RadzenColumn>
+                        <RadzenColumn Size="1">
+                            <a @ref="linkRef" style="font-size: 12px; text-align: center; cursor: pointer; text-decoration: underline; color: rgb(0, 150, 214); display: block; vertical-align: center;"
+                               @onmouseover="@(args => { ShowTestDescription(test, option.Key); ShowTooltip(linkRef, $"{description}"); })"
+                               @onmouseout="@(args => HideTooltip())">
+                                See Description
+                            </a>
+                        </RadzenColumn>
+                    </RadzenRow>
+                    @if (test != option.Value.Last())
+                    {
+                        <hr style="border-top: 1px solid #ccc; margin: 10px 0;" />
+                    }
+                }
+            </RadzenAccordionItem>
+        }
+    </Items>
+</RadzenAccordion>

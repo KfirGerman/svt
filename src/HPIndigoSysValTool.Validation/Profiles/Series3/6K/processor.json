@@ -1,0 +1,16 @@
+{
+  "Profile Details": [
+    {
+      "Caption": "Intel64 Family 6 Model 141 Stepping 1",
+      "DeviceID": "CPU0",
+      "Description": "Intel64 Family 6 Model 141 Stepping 1",
+      "SocketDesignation": "U3E1",
+      "Manufacturer": "GenuineIntel",
+      "Name": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+      "NumberOfCores": 8,
+      "NumberOfLogicalProcessors": 16,
+      "ProcessorId": "BFEBFBFF000806D1"
+    }
+  ]
+
+}

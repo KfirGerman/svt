@@ -1,0 +1,33 @@
+﻿<hr style="border-top: 1px solid #ccc; margin: 10px 0; opacity: 1;" />
+<RadzenStack Gap="1rem">
+    <RadzenRow>
+        <RadzenColumn Size="5">
+            <RadzenText TextStyle="TextStyle.Body1" Class="rz-text-truncate"><b>Test Name</b></RadzenText>
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            <RadzenText TextStyle="TextStyle.Body1" Class="rz-text-truncate"><b>Progress</b></RadzenText>
+        </RadzenColumn>
+        <RadzenColumn Size="1">
+        </RadzenColumn>
+    </RadzenRow>
+    <hr style="border-top: 1px solid #ccc; margin: 10px 0;" />
+
+    <RadzenRow>
+        <RadzenColumn Size="5">
+            <RadzenText TextStyle="TextStyle.Body1" Class="rz-text-truncate">@selectedTest</RadzenText>
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            <RadzenProgressBar Value="@ProgressBarPercentage" />
+        </RadzenColumn>
+        <RadzenColumn Size="1">
+            <RadzenText TextStyle="TextStyle.Body1" Class="rz-text-truncate"><b>Value</b></RadzenText>
+        </RadzenColumn>
+    </RadzenRow>
+    <hr style="border-top: 1px solid #ccc; margin: 10px 0;" />
+    
+    
+    @foreach (var message in ProgressMessages)
+    {
+        <p>@message</p>
+    }
+</RadzenStack>
